@@ -1,9 +1,11 @@
 name: "my-website"
 output_dir: docs
 navbar:
-  title: "My Website"
+  title: "Ecology BIO 239 Laboratory"
   left:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Spring 2022"
+      href: spring2022.html
