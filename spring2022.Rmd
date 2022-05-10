@@ -1,21 +1,11 @@
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:right;"> mpg </th>
-   <th style="text-align:right;"> cyl </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Mazda RX4 </td>
-   <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 6 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Mazda RX4 Wag </td>
-   <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 6 </td>
-  </tr>
-</tbody>
-</table>
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r bio239 line 1, echo = FALSE}
+data <- read.table("bio239_spring2022.csv")
+data
+```
+
+
