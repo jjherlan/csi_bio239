@@ -32,6 +32,46 @@ glm.x0 <- glm( count ~ species + season * mound, data = data3, family = poisson)
 
 add1 ( glm.x0, scope = ~species * season * mound, test = "Chisq")
 
+# We use the `scope` parameter to specify the target model with a full interaction among all 
+# three factors for the `add1` function, but the function has its own rules regarding the 
+# sequence of testing interactions of different orders. Consequently, the test of the second-order
+# interaction (i.e., the )
+
+# Both tested interactions have a significant effect (p < 0.001) and explain a relatively large 
+# fraction of the variability that was not explained by the null model.
+# (See the Deviance column: e.g., species:season term explains (100 x (322.99 - 25.78)/322.99) = XX.XX%) 
+# of the variation unexplained by the glm.x0 model.)
+
+# The tests are based on X^2 (Chi-Square) statistics (due to a specific test parameter in the add1 function call)
+# but in the add1 output this statistic is labelled LRT (likelihood ratio test), which it indeed represents.
+
+# We also not that the `add1` function scores the 3 models under comparison with the 
+# information-theoretic statistic (AIC) value and this comparison  confirms the appropriateness of adding both 
+# interactions to the model. The effect of the mound type seems to be larger than the season, which is in agreement
+# with the likelihood ratio test.
+
+# So we now extend our model by both first-order interactions and call `add1` again with the extended 
+# model to test the remaining second-order interactions:
+
+glm.x1 <- update ( glm.x0, . ~ . + species:season + species:mound )
+add1( glm.x1, scope = ~ species*season*mound, test = "Chisq")
+
+
+52.593-35.315
+52.593-23.126
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
