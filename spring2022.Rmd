@@ -117,7 +117,7 @@ coef ( glm.x1 )
 The number of grasshoppers of different species is significantly affected by the season (Fall vs. Spring)
 (X^2,4 = 297.21, p < 0.001) with more grasshoppers in the Fall and the mound location (East vs. North) (X^2,4 = 43.48, p < 0.001), where more grasshoppers on the North mound.
 
-The effects of these two factors on colony presence and size are mutually independent 
+The effects of these two factors on grasshopper abundance and diversity are mutually independent (X^2,4, n.s.) 
 </div>
 
 
