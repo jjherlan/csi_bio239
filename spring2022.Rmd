@@ -3,10 +3,66 @@ title: "Untitled"
 output: html_document
 ---
 
-```{r bio239 line 1, echo = FALSE}
-data <- read.csv("bio239_spring2022.csv")
+```{r bio239 line 6, include = FALSE, echo = FALSE}
+require(tidyverse)
+require(knitr)
+```
 
+<div style = "margin-bottom:50px;">
+
+Download the package `tidyverse`
+
+</div>
+
+<div style = "margin-bottom:50px;">
+```{r bio239 line 12, echo = FALSE}
+data <- read.csv("bio239_spring2022.csv")
 knitr::kable(head(data[, 1:5]), "pipe")
 ```
+</div>
+
+<div style = "margin-bottom:50px;">
+```{r bio239 line 20, include = FALSE, echo = FALSE}
+data3 <- read.csv("bio239_spring2022b.csv")
+data3
+```
+</div>
+
+<div style = "margin-bottom:50px;">
+```{r bio239 line 27, include = TRUE, echo = FALSE}
+data3 <- as_tibble(data3)
+data3
+```
+</div>
+
+<div style = "margin-bottom:50px;">
+
+The starting model contains, as its predictors, the main effect of the response
+factor (in our study, the species of insect at a site, or mound) and the main effects
+and and mutual interactions of th explanatory factors. The response variable in this model
+is the counts. We set up the null model (with a Poisson distribution and an implicit log 
+link function) as follows:
+
+</div>
+
+<div style = "margin-bottom:50px;">
+```{r bio239 line 34, include = TRUE, echo = FALSE}
+glm.x0 <- glm( count ~ species + season * mound, data = data3, family = poisson)
+```
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
