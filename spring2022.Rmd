@@ -74,8 +74,8 @@ fraction of the variability that was not explained by the null model.
 (See the Deviance column: e.g., species:season term explains (100 x (322.99 - 25.78)/322.99) = XX.XX%) 
 of the variation unexplained by the glm.x0 model.)
 
-The tests are based on X^2 (Chi-Square) statistics (due to a specific test parameter in the add1 function call)
-but in the add1 output this statistic is labelled LRT (likelihood ratio test), which it indeed represents.
+The tests are based on X^2 (Chi-Square) statistics (due to a specific test parameter in the `add1` function call)
+but in the `add1` output this statistic is labelled LRT (likelihood ratio test), which it indeed represents.
 
 We also not that the `add1` function scores the 3 models under comparison with the 
 information-theoretic statistic (AIC) value and this comparison  confirms the appropriateness of adding both 
@@ -97,9 +97,21 @@ add1( glm.x1, scope = ~ species*season*mound, test = "Chisq")
 ```
 </div>
 
+<div style = "margin-bottom:50px;">
+This interaction term, however, is not significant (and the AIC value even increases with addition),
+so we conclude that the season and the mound type within the neighborhood affect the presence of 
+grasshopper species and their count independently.
 
+To provide students with of this research project with a more specific ecological interpretation, we must
+work out the direction of the effects we have just revealed. For this, we start from the estimated values 
+of our regression coefficients. These coefficients can be obtained with extracting function `coef`. 
+</div>
 
-
+<div style = "margin-bottom:50px;">
+```{r bio239 line 111, include = TRUE, echo = TRUE}
+coef ( glm.x1 )
+```
+</div>
 
 
 

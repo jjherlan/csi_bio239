@@ -56,6 +56,17 @@ add1 ( glm.x0, scope = ~species * season * mound, test = "Chisq")
 glm.x1 <- update ( glm.x0, . ~ . + species:season + species:mound )
 add1( glm.x1, scope = ~ species*season*mound, test = "Chisq")
 
+# This interaction term, however, is not significant (and the AIC value even increases with addition),
+# so we conclude that the season and the mound type within the neighborhood affect the presence of 
+# grasshopper species and their size independently.
+
+# To provide students with of this research project with a more specific ecological interpretation, we must
+# work out the direction of the effects we have just revealed. For this, we start from the estimated values 
+# of our regression coefficients. These coefficients can be obtained with extracting function `coef`. 
+
+coef ( glm.x1 )
+
+
 
 52.593-35.315
 52.593-23.126
