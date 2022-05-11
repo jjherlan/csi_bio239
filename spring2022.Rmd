@@ -4,8 +4,9 @@ output: html_document
 ---
 
 ```{r bio239 line 1, echo = FALSE}
-data <- read.table("bio239_spring2022.csv")
-data
+data <- read.csv("bio239_spring2022.csv")
+
+knitr::kable(head(data[, 1:5]), "pipe")
 ```
 
 
